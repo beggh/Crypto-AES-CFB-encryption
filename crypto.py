@@ -1,59 +1,22 @@
 
-# coding: utf-8
-
-# In[1]:
-
-
 from Crypto.Cipher import AES
-import binascii,os
-
-
-# In[2]:
-
-
-#import onetimepad             
+import binascii,os            
 import tkinter
 from tkinter import filedialog
 from tkinter import messagebox
-
-
-# In[3]:
-
-
 from Crypto.Hash import SHA256
 from Crypto import Random
 
-
-# In[4]:
-
-
 #password=input("Enter passw: ")
 
-
-# In[5]:
-
-
 #print(password)
-
-
-# In[6]:
-
 
 #hash_obj=SHA256.new(password.encode('utf-8'))
 hkey=b'\x18_\x8d\xb3"q\xfe%\xf5a\xa6\xfc\x93\x8b.&C\x06\xec0N\xdaQ\x80\x07\xd1vH&8\x19i'
 #print(hkey)
 
-
-# In[7]:
-
-
 #def pad(s):
     #return s+b"\0" *((AES.block_size-len(s)) % AES.block_size)
-
-
-# In[8]:
-
-
 
 def encrypt(msg,hkey):
     #msg=pad(msg)
@@ -65,9 +28,6 @@ def encrypt(msg,hkey):
 msg="I love python too much forever"
 ans=encrypt(msg,hkey)
 print(ans)
-
-
-# In[9]:
 
 
 def decrypt(cyphertext,hkey):
@@ -83,19 +43,12 @@ res=decrypt(ans,hkey)
 print(res)    
 filename=None 
 
-
-# In[10]:
-
-
 def encrypt_file(file_name,hkey):
     with open(file_name,'br') as f:
         plaintext=f.read()
     enc=encrypt(plaintext,hkey)    
     with open(file_name+".enc",'bw') as f:
         f.write(enc)
-
-
-# In[11]:
 
 
 def decrypt_file(file_name,hkey):
@@ -106,10 +59,6 @@ def decrypt_file(file_name,hkey):
         f.write(dec)
 
 
-# In[12]:
-
-
-
 def load_file():
     global hkey,filename
     text_file=filedialog.askopenfile(filetypes=[('Text Files','txt')])
@@ -118,21 +67,13 @@ def load_file():
         
         
 
-
-# In[13]:
-
-
 def encrypt_the_file():
     global hkey,filename
     if filename!=None:
         encrypt_file(filename,hkey)
     else:
         messagebox.showerror(title="Error:",message="There was no file loaded to encrypt")
-    
-
-
-# In[14]:
-
+        
 
 def decrypt_the_file():
     global hkey,filename
@@ -142,10 +83,6 @@ def decrypt_the_file():
     else:
         messagebox.showerror(title="Error:",message="There was no file loaded to encrypt")
     
-
-
-# In[16]:
-
 
 root=tkinter.Tk()
 root.title("CRYPTOGRAPHY") 
