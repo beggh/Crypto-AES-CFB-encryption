@@ -12,3 +12,4 @@ Explaination: AES-CFB algorithm
 
  Encryption ![Encrypt](https://user-images.githubusercontent.com/32975416/108588135-9b631400-737d-11eb-8109-7cd7ed8bd0f8.PNG)
 
+ Decryption  ![decrypt](https://user-images.githubusercontent.com/32975416/108588176-cf3e3980-737d-11eb-8dca-919ed89c06da.PNG)
