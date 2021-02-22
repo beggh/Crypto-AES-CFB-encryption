@@ -13,7 +13,7 @@ Explaination :-<br>
  -> delete data from original file to see decryption <br>
  -> Decrypt file will decode ciphertext back to string 
 
-Algorithm: AES-Cross Feedback algorithm
+Algorithm: AES-Cypher Feedback algorithm
 
 
  Encryption <br> ![Encrypt](https://user-images.githubusercontent.com/32975416/108588135-9b631400-737d-11eb-8109-7cd7ed8bd0f8.PNG)
